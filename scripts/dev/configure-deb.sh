@@ -2,7 +2,7 @@
 
 cd "${0%/*}/../.."
 
-./buildconf
+./buildconf --force
 
 ./configure \
   --enable-debug \
