@@ -9,10 +9,8 @@ cd "${0%/*}/../.."
   --enable-fpm \
   --with-fpm-systemd \
   --enable-phpdbg \
-  --enable-phpdbg-webhelper \
   --enable-phpdbg-readline \
   --with-openssl \
-  --with-kerberos \
   --with-system-ciphers \
   --with-pcre-jit \
   --with-zlib \
@@ -35,10 +33,6 @@ cd "${0%/*}/../.."
   --with-freetype \
   --with-gettext \
   --with-gmp \
-  --with-mhash \
-  --with-imap \
-  --with-kerberos \
-  --with-imap-ssl \
   --enable-intl \
   --with-ldap \
   --with-ldap-sasl \
@@ -48,7 +42,6 @@ cd "${0%/*}/../.."
   --with-pdo-mysql \
   --with-pdo-pgsql \
   --with-pgsql \
-  --with-pspell \
   --with-libedit \
   --with-readline \
   --enable-shmop \
@@ -64,9 +57,7 @@ cd "${0%/*}/../.."
   --with-xsl \
   --with-zip \
   --enable-mysqlnd \
-  --with-pear \
   --enable-werror \
   --enable-phar \
   --enable-zend-test=shared \
   "$@"
-
