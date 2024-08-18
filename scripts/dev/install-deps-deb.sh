@@ -17,23 +17,23 @@ install_deps_deb() {
   fi
 
   apt_update
-  apt_install lsb-release
+#  apt_install lsb-release
 
   case "$(lsb_release -si)" in
     (Ubuntu)
-      apt_install software-properties-common
-      apt-add-repository -y ppa:ondrej/php
-      case "$(lsb_release -sc)" in
-        (xenial)
-          if ! grep -r -E '^deb.*xenial-backports.*' /etc/apt/sources.list* > /dev/null; then
-            printf -- '%s\n' 'deb http://archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse' \
-              > /etc/apt/sources.list.d/xenial-backports.list
-          fi
-
-          printf -- '%s\n' 'Package: liblmdb-dev liblmdb0 lmdb-doc' 'Pin: release a=xenial-backports' 'Pin-Priority: 500' \
-            > /etc/apt/preferences.d/xenial-backports-lmdb
-        ;;
-      esac
+#      apt_install software-properties-common
+#      apt-add-repository -y ppa:ondrej/php
+#      case "$(lsb_release -sc)" in
+#        (xenial)
+#          if ! grep -r -E '^deb.*xenial-backports.*' /etc/apt/sources.list* > /dev/null; then
+#            printf -- '%s\n' 'deb http://archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse' \
+#              > /etc/apt/sources.list.d/xenial-backports.list
+#          fi
+#
+#          printf -- '%s\n' 'Package: liblmdb-dev liblmdb0 lmdb-doc' 'Pin: release a=xenial-backports' 'Pin-Priority: 500' \
+#            > /etc/apt/preferences.d/xenial-backports-lmdb
+#        ;;
+#      esac
       apt_update
     ;;
   esac
@@ -51,7 +51,6 @@ install_deps_deb() {
     libwebp-dev \
     libjpeg-dev \
     libfreetype6-dev \
-    libc-client-dev \
     libbz2-dev \
     libenchant-dev \
     libgmp-dev \
