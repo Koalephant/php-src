@@ -42,6 +42,7 @@ cd "${0%/*}/../.."
   --with-pdo-mysql \
   --with-pdo-pgsql \
   --with-pgsql \
+  --with-pspell \
   --with-libedit \
   --with-readline \
   --enable-shmop \
@@ -57,7 +58,6 @@ cd "${0%/*}/../.."
   --with-xsl \
   --with-zip \
   --enable-mysqlnd \
-  --enable-werror \
   --enable-phar \
   --enable-zend-test=shared \
   "$@"
