@@ -42,7 +42,6 @@ cd "${0%/*}/../.."
   --with-pdo-mysql \
   --with-pdo-pgsql \
   --with-pgsql \
-  --with-pspell \
   --with-libedit \
   --with-readline \
   --enable-shmop \

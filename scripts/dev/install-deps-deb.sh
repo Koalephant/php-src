@@ -63,7 +63,6 @@ install_deps_deb() {
     libxpm-dev \
     libsasl2-dev \
     libpq-dev \
-    libpspell-dev \
     libedit-dev \
     libsnmp-dev \
     libsodium-dev \
