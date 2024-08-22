@@ -21,6 +21,13 @@
 
 #define PHP_SPL_VERSION PHP_VERSION
 
+#define SPL_AUTOLOAD_NAME_LOWERCASE (1<<0L)
+#define SPL_AUTOLOAD_NAME_UPPERCASE (1<<1L)
+#define SPL_AUTOLOAD_NAME_NATURAL (1<<2L)
+#define SPL_AUTOLOAD_NAME_NAMESPACE (1<<3L)
+
+#define SPL_DEFAULT_FILE_NAMES SPL_AUTOLOAD_NAME_LOWERCASE
+
 extern zend_module_entry spl_module_entry;
 #define phpext_spl_ptr &spl_module_entry
 

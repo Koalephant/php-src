@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 21ec2dcca99c85c90afcd319da76016a9f678dc2 */
+ * Stub hash: eb003b0c4dde649c0422503e71d0881d58586a69 */
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_implements, 0, 1, MAY_BE_ARRAY|MAY_BE_FALSE)
 	ZEND_ARG_INFO(0, object_or_class)
@@ -21,6 +21,10 @@ ZEND_END_ARG_INFO()
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_spl_autoload_extensions, 0, 0, IS_STRING, 0)
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, file_extensions, IS_STRING, 1, "null")
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_spl_autoload_names, 0, 0, IS_LONG, 0)
+	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, names, IS_LONG, 1, "null")
 ZEND_END_ARG_INFO()
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_spl_autoload_functions, 0, 0, IS_ARRAY, 0)
@@ -67,6 +71,7 @@ ZEND_FUNCTION(class_uses);
 ZEND_FUNCTION(spl_autoload);
 ZEND_FUNCTION(spl_autoload_call);
 ZEND_FUNCTION(spl_autoload_extensions);
+ZEND_FUNCTION(spl_autoload_names);
 ZEND_FUNCTION(spl_autoload_functions);
 ZEND_FUNCTION(spl_autoload_register);
 ZEND_FUNCTION(spl_autoload_unregister);
@@ -84,6 +89,7 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(spl_autoload, arginfo_spl_autoload)
 	ZEND_FE(spl_autoload_call, arginfo_spl_autoload_call)
 	ZEND_FE(spl_autoload_extensions, arginfo_spl_autoload_extensions)
+	ZEND_FE(spl_autoload_names, arginfo_spl_autoload_names)
 	ZEND_FE(spl_autoload_functions, arginfo_spl_autoload_functions)
 	ZEND_FE(spl_autoload_register, arginfo_spl_autoload_register)
 	ZEND_FE(spl_autoload_unregister, arginfo_spl_autoload_unregister)
@@ -95,3 +101,11 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(iterator_to_array, arginfo_iterator_to_array)
 	ZEND_FE_END
 };
+
+static void register_php_spl_symbols(int module_number)
+{
+	REGISTER_LONG_CONSTANT("SPL_AUTOLOAD_NAME_LOWERCASE", 1 << 0, CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("SPL_AUTOLOAD_NAME_UPPERCASE", 1 << 1, CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("SPL_AUTOLOAD_NAME_NATURAL", 1 << 2, CONST_PERSISTENT);
+	REGISTER_LONG_CONSTANT("SPL_AUTOLOAD_NAME_NAMESPACE", 1 << 3, CONST_PERSISTENT);
+}

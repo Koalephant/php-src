@@ -3,6 +3,23 @@
 /** @generate-class-entries */
 
 /**
+ * @var int
+ */
+const SPL_AUTOLOAD_NAME_LOWERCASE = 1<<0;
+/**
+ * @var int
+ */
+const SPL_AUTOLOAD_NAME_UPPERCASE = 1<<1;
+/**
+ * @var int
+ */
+const SPL_AUTOLOAD_NAME_NATURAL = 1<<2;
+/**
+ * @var int
+ */
+const SPL_AUTOLOAD_NAME_NAMESPACE = 1<<3;
+
+/**
  * @param object|string $object_or_class
  * @return array<string, string>|false
  * @refcount 1
@@ -28,6 +45,8 @@ function spl_autoload(string $class, ?string $file_extensions = null): void {}
 function spl_autoload_call(string $class): void {}
 
 function spl_autoload_extensions(?string $file_extensions = null): string {}
+
+function spl_autoload_names(?int $names = null): int {}
 
 function spl_autoload_functions(): array {}
 
