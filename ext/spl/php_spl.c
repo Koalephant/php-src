@@ -320,6 +320,8 @@ PHP_FUNCTION(spl_autoload)
 
 	if (names & SPL_AUTOLOAD_NAME_NATURAL) {
 		lookup_name = class_name;
+	} else if (names & SPL_AUTOLOAD_NAME_UPPERCASE)	{
+		lookup_name = zend_string_toupper(class_name);
 	} else {
 		lookup_name = zend_string_tolower(class_name);
 	}
